@@ -1,11 +1,20 @@
 {% extends "AppCoder/padre.html" %}
 
+{% block titulo %}
+Bienvenido a mi proyecto AppCoder
+{% endblock %}
+
 {% block contenido %}
     <!--Aqui va lo que cambia, y lo asociado a esta vista-->
-    <div class="text-center m-5">
-        <h1>Este es el titulo del Inicio que cambio</h1>
-        <h3>Se ha heredado todo de la plantilla padre</h3>
-        <h3>En el hijo, inicio.html , casi no hay nada</h3>
-    </div>
+    <section class="features-icons bg-light text-center">  
+        <div class="container">
+            <div class="row">
+                <h1>Este es el titulo del Inicio que cambio</h1>
+                <h4>Se ha heredado todo de la plantilla padre</h4>
+                <h4>En el hijo, inicio.html , casi no hay nada</h4>
+            </div>
+        </div>
+     </section>
+    
 
 {% endblock %}

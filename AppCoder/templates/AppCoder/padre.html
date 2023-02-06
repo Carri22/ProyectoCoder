@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Landing Page - Start Bootstrap Theme</title>
+        <title>{% block titulo %}{% endblock %}</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'AppCoder/assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
@@ -21,11 +21,11 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="/">App Coder</a>
-                <a class="navbar-brand" href="/cursos/">Cursos</a>
-                <a class="navbar-brand" href="/profesores/">Profesores</a>
-                <a class="navbar-brand" href="/estudiantes/">Estudiantes</a>
-                <a class="navbar-brand" href="/entregables/">Entregables</a>
+                <a class="navbar-brand" href="{% url 'inicio'%}">App Coder</a>
+                <a class="navbar-brand" href="{% url 'cursos'%}">Cursos</a>
+                <a class="navbar-brand" href="{% url 'profesores'%}">Profesores</a>
+                <a class="navbar-brand" href="{% url 'estudiantes'%}">Estudiantes</a>
+                <a class="navbar-brand" href="{% url 'entregables'%}">Entregables</a>
 
                 <a class="btn btn-primary" href="/">Inicio</a>
             </div>
