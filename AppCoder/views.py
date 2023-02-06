@@ -16,4 +16,4 @@ def estudiantes(request):
     return render(request,'AppCoder/estudiantes.html')
 
 def entregables(request):
-    return render('AppCoder/entregables.html')
+    return render(request,'AppCoder/entregables.html')
