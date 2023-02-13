@@ -1,0 +1,28 @@
+{% extends "AppCoder/padre.html" %}
+
+{% block titulo %}
+Formulario - Agregar profesor
+{% endblock %}
+
+{% block contenido %}
+    <!--Aqui va lo que cambia, y lo asociado a esta vista-->
+    <section class="features-icons bg-light">  
+        <div class="container">
+            <div class="row">
+
+                {% if formulario_profesor.errors %}
+                <p style="color: red;">Los datos son erroneos. Por favor reviselos</p>
+                {% endif %}
+
+                <form action="{% url 'profesor-formulario' %}" method="post">
+                    {% csrf_token %}
+                    <table>
+                        {{ formulario_profesor.as_table}}
+                    </table>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+     </section>
+
+{% endblock %}
