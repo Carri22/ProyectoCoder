@@ -1,0 +1,43 @@
+{% extends "AppCoder/padre.html" %}}
+
+{% block titulo %}
+Profesores
+{% endblock %}
+
+{% block contenido %}
+    <!--Aqui va lo que cambia, y lo asociado a esta vista-->
+    <section class="features-icons bg-light">  
+        <div class="container">
+            <div class="row">
+                <h1>Profesores</h1>
+                <p>
+                    <ul>
+                        {% for profesor in profesores %}
+                            <li>{{profesor}} - 
+                                <a href="{% url 'eliminar-profesor' profesor.id %}">Eliminar </a>
+                                <a href="{% url 'editar-profesor' profesor.id %}">Editar</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </p>
+
+                {% if mi_formulario %}
+
+                {% if formulario_profesor.errors %}
+                <p style="color: red;">Los datos son erroneos. Por favor reviselos</p>
+                {% endif %}
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <table>
+                        {{ mi_formulario.as_table}}
+                    </table>
+                    <input class="m-2" type="submit" value="Guardar cambios">
+                </form>
+
+
+                {% endif %}
+            </div>
+        </div>
+    </section>>
+{% endblock %}

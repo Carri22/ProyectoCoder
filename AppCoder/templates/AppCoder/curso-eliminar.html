@@ -1,0 +1,22 @@
+{% extends "AppCoder/padre.html" %}}
+{% block titulo %}
+Cursos
+{% endblock %}
+
+{% block contenido %}
+    <!--Aqui va lo que cambia, y lo asociado a esta vista-->
+    <section class="mt-5">  
+        <div class="container">
+            <div class="row">
+                <h1>Eliminar curso</h1>
+                <form method="post"">
+                {% csrf_token %}
+                <p>Seguro que desea eliminar el curso {{object}}</p>
+                <input type="submit" value="Seguro">
+                </form>
+
+
+            </div>
+        </div>
+     </section>
+{% endblock %}

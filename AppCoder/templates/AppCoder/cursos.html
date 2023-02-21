@@ -5,11 +5,49 @@ Cursos
 
 {% block contenido %}
     <!--Aqui va lo que cambia, y lo asociado a esta vista-->
-    <section class="features-icons bg-light text-center">  
+    <section class="mt-5">  
         <div class="container">
             <div class="row">
-                <h1>Cursos</h1>
-                <p>Aca va la info de Cursos</p>
+                <div >
+
+                </div>
+                <h1 class="text-center">Cursos</h1>
+                {% if formulario_curso.erros %}
+                <p style="color: red;">Los datos estan mal. Porfacvor reviselos</p>
+                {% endif %}
+
+                <h4>Cursos activos:</h4>
+                
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Camada</th>
+                    </tr>
+                    {% for curso in mis_cursos %}    
+                    <tr>
+                        <td>{{curso.nombre}}</td>
+                        <td>{{curso.camada}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+
+                {% if nuevo_curso %}
+                <p>Se agrego satisfactoriamente la camada {{nuevo_curso.camada}}: {{nuevo_curso.nombre}}</p>
+                <hr>
+                {% endif %}
+
+                <form action="{% url 'cursos' %}" method="POST">
+                    {% csrf_token %}
+
+                    <table>
+                        {{formulario_curso.as_table}}
+                    </table>
+
+                    <input  class="mt-5" type="submit" value="Agregar cursos">
+
+                </form>
+
             </div>
         </div>
      </section>

@@ -15,17 +15,17 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static 'AppCoder/css/styles.css' %}" rel="stylesheet" />
+        <link href="{% static 'AppCoder/css/styles.css' %}" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'inicio'%}">App Coder</a>
-                <a class="navbar-brand" href="{% url 'cursos'%}">Cursos</a>
-                <a class="navbar-brand" href="{% url 'profesores'%}">Profesores</a>
-                <a class="navbar-brand" href="{% url 'estudiantes'%}">Estudiantes</a>
-                <a class="navbar-brand" href="{% url 'entregables'%}">Entregables</a>
+                <a class="navbar-brand appcoder" href="{% url 'inicio'%}">App Coder</a>
+                <a class="navbar-brand" href="{% url 'inicio'%}">Cursos</a>
+                <a class="navbar-brand" href="{% url 'inicio'%}">Profesores</a>
+                <a class="navbar-brand" href="{% url 'inicio'%}">Estudiantes</a>
+                <a class="navbar-brand" href="{% url 'inicio'%}">Entregables</a>
 
                 <a class="btn btn-primary" href="/">Inicio</a>
             </div>
@@ -68,7 +68,7 @@
         {% endblock %}
 
         <!-- Footer-->
-        <footer class="footer bg-light">
+        <footer class="mt-5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">

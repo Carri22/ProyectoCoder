@@ -1,0 +1,32 @@
+{% extends "AppCoder/padre.html" %}}
+{% block titulo %}
+Cursos
+{% endblock %}
+
+{% block contenido %}
+    <!--Aqui va lo que cambia, y lo asociado a esta vista-->
+    <section class="mt-5">  
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Cursos de Coder</h1>
+                    <ul>
+                        {% for curso in object_list %}
+                        <li>
+                            <p>Nombre: {{curso.nombre}}</p>
+                            <p>
+                                <a href="{% url 'detalle' curso.id%}">Ver</a>
+                                <a href="{% url 'editar' curso.id%}">Editar</a>
+                                <a href="{% url 'eliminar' curso.id%}">Eliminar</a>
+                            </p>
+                        </li>
+                        {% endfor %}
+                        <p>
+                            <a href="{% url 'nuevo' %}">Crear nuevo curso</a>
+                        </p>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+     </section>
+{% endblock %}
