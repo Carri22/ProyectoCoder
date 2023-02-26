@@ -6,12 +6,13 @@ Bienvenido a mi proyecto AppCoder
 
 {% block contenido %}
     <!--Aqui va lo que cambia, y lo asociado a esta vista-->
-    <section class="features-icons bg-light text-center">  
+    <section class="mt-5 text-center">  
         <div class="container">
             <div class="row">
-                <h1>Este es el titulo del Inicio que cambio</h1>
-                <h4>Se ha heredado todo de la plantilla padre</h4>
-                <h4>En el hijo, inicio.html , casi no hay nada</h4>
+                {% if mensaje %}
+                   <p style="color: red;">{{ mensaje }}</p>
+                   {% endif %} 
+                <h1>Bienvenido a mi sitio</h1>
             </div>
         </div>
      </section>
